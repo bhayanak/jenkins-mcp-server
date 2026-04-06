@@ -1,0 +1,40 @@
+{
+  "computer": [
+    {
+      "displayName": "built-in",
+      "offline": false,
+      "temporarilyOffline": false,
+      "numExecutors": 4,
+      "idle": false,
+      "offlineCauseReason": null,
+      "monitorData": {}
+    },
+    {
+      "displayName": "agent-linux-01",
+      "offline": false,
+      "temporarilyOffline": false,
+      "numExecutors": 8,
+      "idle": true,
+      "offlineCauseReason": null,
+      "monitorData": {}
+    },
+    {
+      "displayName": "agent-linux-02",
+      "offline": true,
+      "temporarilyOffline": false,
+      "numExecutors": 8,
+      "idle": true,
+      "offlineCauseReason": "Maintenance",
+      "monitorData": {}
+    },
+    {
+      "displayName": "agent-mac-01",
+      "offline": true,
+      "temporarilyOffline": true,
+      "numExecutors": 2,
+      "idle": true,
+      "offlineCauseReason": "Upgrade in progress",
+      "monitorData": {}
+    }
+  ]
+}

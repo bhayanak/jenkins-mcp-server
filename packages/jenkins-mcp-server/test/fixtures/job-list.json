@@ -1,0 +1,34 @@
+{
+  "jobs": [
+    {
+      "name": "web-api",
+      "fullName": "web-api",
+      "url": "https://ci.example.com/job/web-api/",
+      "color": "blue",
+      "buildable": true,
+      "lastBuild": { "number": 342, "result": "SUCCESS", "timestamp": 1700000000000 },
+      "healthReport": [{ "score": 90, "description": "Build stability: 90%" }],
+      "inQueue": false
+    },
+    {
+      "name": "data-pipeline",
+      "fullName": "data-pipeline",
+      "url": "https://ci.example.com/job/data-pipeline/",
+      "color": "red",
+      "buildable": true,
+      "lastBuild": { "number": 28, "result": "FAILURE", "timestamp": 1700000000000 },
+      "healthReport": [{ "score": 40, "description": "Build stability: 40%" }],
+      "inQueue": false
+    },
+    {
+      "name": "mobile-app",
+      "fullName": "mobile-app",
+      "url": "https://ci.example.com/job/mobile-app/",
+      "color": "blue_anime",
+      "buildable": true,
+      "lastBuild": { "number": 156, "result": null, "timestamp": 1700000000000 },
+      "healthReport": [{ "score": 95, "description": "Build stability: 95%" }],
+      "inQueue": false
+    }
+  ]
+}

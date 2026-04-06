@@ -1,0 +1,28 @@
+{
+  "name": "jenkins-mcp-server-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm --filter jenkins-mcp-server run dev",
+    "test": "pnpm --filter jenkins-mcp-server run test",
+    "test:coverage": "pnpm --filter jenkins-mcp-server run test:coverage",
+    "lint": "pnpm --filter jenkins-mcp-server run lint",
+    "lint:fix": "pnpm --filter jenkins-mcp-server run lint:fix",
+    "typecheck": "pnpm -r run typecheck",
+    "format": "prettier --check \"packages/**/*.ts\"",
+    "format:fix": "prettier --write \"packages/**/*.ts\"",
+    "validate": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run format",
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run test:coverage && pnpm run format",
+    "logo:generate": "node scripts/generate-logo.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "sharp": "^0.34.5"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

@@ -1,0 +1,121 @@
+{
+  "name": "jenkins-mcp-vscode-extension",
+  "displayName": "Jenkins MCP Server",
+  "description": "VS Code extension providing Jenkins MCP Server for AI-powered CI/CD pipeline management",
+  "version": "0.1.0",
+  "publisher": "bhayanak",
+  "license": "MIT",
+  "icon": "logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhayanak/jenkins-mcp-server"
+  },
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "mcp",
+    "jenkins",
+    "ci-cd",
+    "pipeline",
+    "builds",
+    "copilot",
+    "ai"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jenkins-mcp.startServer",
+        "title": "Jenkins MCP: Start Server"
+      },
+      {
+        "command": "jenkins-mcp.stopServer",
+        "title": "Jenkins MCP: Stop Server"
+      },
+      {
+        "command": "jenkins-mcp.showServerOutput",
+        "title": "Jenkins MCP: Show Server Output"
+      }
+    ],
+    "configuration": {
+      "title": "Jenkins MCP Server",
+      "properties": {
+        "jenkins-mcp.jenkinsUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Jenkins controller URL (e.g., https://ci.example.com)",
+          "order": 1
+        },
+        "jenkins-mcp.jenkinsUser": {
+          "type": "string",
+          "default": "",
+          "description": "Jenkins username for API authentication",
+          "order": 2
+        },
+        "jenkins-mcp.jenkinsToken": {
+          "type": "string",
+          "default": "",
+          "description": "Jenkins API token (generate from User → Configure → API Token)",
+          "order": 3
+        },
+        "jenkins-mcp.useCrumb": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CSRF crumb fetching for POST requests",
+          "order": 4
+        },
+        "jenkins-mcp.maxLogSize": {
+          "type": "number",
+          "default": 1048576,
+          "description": "Maximum log output size in bytes (default: 1MB)",
+          "order": 5
+        },
+        "jenkins-mcp.timeoutMs": {
+          "type": "number",
+          "default": 30000,
+          "description": "API request timeout in milliseconds",
+          "order": 6
+        },
+        "jenkins-mcp.allowedJobs": {
+          "type": "string",
+          "default": "",
+          "description": "Comma-separated job name filter to restrict access (empty = all jobs)",
+          "order": 7
+        },
+        "jenkins-mcp.depth": {
+          "type": "number",
+          "default": 1,
+          "description": "Default API depth parameter for Jenkins REST calls",
+          "order": 8
+        }
+      }
+    },
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "jenkins-mcp",
+        "label": "Jenkins MCP Server"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "node build.cjs",
+    "build": "node build.cjs",
+    "package": "pnpm run build && vsce package --out jenkins-mcp-vscode-$(node -p \"require('./package.json').version\").vsix",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.57",
+    "@types/vscode": "^1.99.0",
+    "@vscode/vsce": "^3.3.2",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.3"
+  }
+}

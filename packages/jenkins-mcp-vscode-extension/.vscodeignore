@@ -1,0 +1,9 @@
+.git
+src/**
+!dist/**
+!server/**
+node_modules
+*.ts
+!*.d.ts
+tsconfig.json
+build.cjs

@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Format check
+        run: pnpm run format
+
+      - name: Test with coverage (90%+ enforced)
+        run: pnpm run test:coverage
+
+      - name: Build server
+        run: pnpm --filter jenkins-mcp-server run build
+
+      - name: Package extension
+        run: cd packages/jenkins-mcp-vscode-extension && pnpm run package
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.node-version == 22
+        with:
+          name: jenkins-mcp-vscode-extension
+          path: packages/jenkins-mcp-vscode-extension/*.vsix

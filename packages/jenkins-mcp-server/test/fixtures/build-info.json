@@ -1,0 +1,34 @@
+{
+  "number": 342,
+  "result": "SUCCESS",
+  "building": false,
+  "duration": 192000,
+  "estimatedDuration": 180000,
+  "timestamp": 1700000000000,
+  "url": "https://ci.example.com/job/web-api/342/",
+  "displayName": "#342",
+  "actions": [
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [{ "shortDescription": "Started by user admin", "userId": "admin" }]
+    },
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        { "name": "branch", "value": "main" },
+        { "name": "deploy", "value": "staging" }
+      ]
+    }
+  ],
+  "changeSets": [
+    {
+      "items": [
+        {
+          "commitId": "abc123",
+          "msg": "Fix auth bug",
+          "author": { "fullName": "John Doe" }
+        }
+      ]
+    }
+  ]
+}
