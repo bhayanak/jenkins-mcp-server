@@ -123,3 +123,7 @@ List installed plugins with optional filters.
 - All inputs validated via Zod schemas
 - Path traversal is blocked in job and node names
 
+## Logo Attribution
+
+The Jenkins India logo used in this project is derived from the [Jenkins project](https://jenkins.io/) artwork, licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
+

@@ -44,3 +44,7 @@ After installation, the Jenkins MCP Server appears automatically in:
 | **Jenkins MCP: Show Server Output** | Open the server output channel |
 
 Access these from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`).
+
+## Logo Attribution
+
+The Jenkins India logo used in this project is derived from the [Jenkins project](https://jenkins.io/) artwork, licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).

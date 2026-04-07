@@ -67,6 +67,10 @@ The server exposes **14 MCP tools**:
 | `jenkins_list_queue` | View build queue |
 | `jenkins_list_plugins` | List installed plugins |
 
+## Logo Attribution
+
+The Jenkins India logo used in this project is derived from the [Jenkins project](https://jenkins.io/) artwork, licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
+
 ## License
 
 [MIT](LICENSE)
