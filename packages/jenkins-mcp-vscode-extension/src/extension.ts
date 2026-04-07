@@ -129,12 +129,7 @@ export function activate(context: vscode.ExtensionContext): void {
           const serverPath = getServerPath(context);
           const env = getConfig();
           return [
-            new vscode.McpStdioServerDefinition(
-              'Jenkins MCP Server',
-              'node',
-              [serverPath],
-              env,
-            ),
+            new vscode.McpStdioServerDefinition('Jenkins MCP Server', 'node', [serverPath], env),
           ];
         },
       });
@@ -151,9 +146,7 @@ export function activate(context: vscode.ExtensionContext): void {
       );
     }
   } catch (err) {
-    outputChannel.appendLine(
-      `[Jenkins MCP] MCP definition provider API not available: ${err}`,
-    );
+    outputChannel.appendLine(`[Jenkins MCP] MCP definition provider API not available: ${err}`);
   }
 
   context.subscriptions.push(outputChannel);
